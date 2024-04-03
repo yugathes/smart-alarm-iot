@@ -1,0 +1,12 @@
+[Unit]
+ Description=Alarm Trigger from Mysql
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/python3 /home/pi/Smart-Alarm/trigger.py
+ StandardOutput=append:/home/pi/trigger.log
+ StandardError=append:/home/pi/triggerError.log
+
+ [Install]
+ WantedBy=multi-user.target

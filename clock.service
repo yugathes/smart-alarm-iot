@@ -1,0 +1,12 @@
+[Unit]
+ Description=AutoRun Clock LCD
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/python3 /home/pi/Smart-Alarm/clock.py > /home/pi/clock.log 2>&1
+ StandardOutput=append:/home/pi/clockError.log
+ StandardError=append:/home/pi/clock.log
+
+ [Install]
+ WantedBy=multi-user.target
